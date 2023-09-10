@@ -59,6 +59,9 @@ int main()
 		std::cin >> dinamich_array[i];
 	std::cout <<"\n result: " << Array(dinamich_array, n);
 	//---------3----------
+        int n;
+	std::cin >> n;
+	std::cout << alg_fact(n);
  */
 }
 
