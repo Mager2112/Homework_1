@@ -25,8 +25,6 @@ int Array(int array[], int n) //Counting unique numbers
 	int result = 0;
 	std::sort(array, array + n);
 	for (int i = 0; i < n; i++)
-		std::cout << array[i] << " ";
-	for (int i = 0; i < n; i++)
 		if (array[i] != array[i + 1])
 			result++;
 	return result;
@@ -45,6 +43,19 @@ double alg_fact(int n)
 		count += 1 / factorial(i);
 	return count;
 }
+///////4) Array finding
+int Array_find(int array[], int n) // finding missing number 1, 2, 3, 5, 6 result: 4
+{
+	int result = 0;
+	std::sort(array, array + n);
+	for (int i = 0; i < n; i++)
+	{
+		result++;
+		if (array[i] < array[i + 1] - 1)
+			break;
+	}
+	return result+1;
+}
 int main()
 {/*  
 	//----------1--------
@@ -62,6 +73,13 @@ int main()
         int n;
 	std::cin >> n;
 	std::cout << alg_fact(n);
+        //---------4----------
+        int n;
+	std::cin >> n;
+	int* dinamich_array = new int[n];
+	for (int i = 0; i < n; i++)
+		std::cin >> dinamich_array[i];
+	std::cout << "\n result: " << Array_find(dinamich_array, n);
  */
 }
 
