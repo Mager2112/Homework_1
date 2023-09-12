@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <cmath>
+#include <algorithm>
 ///////1) Fibonacci
 int Fibonacci(int a) // 1 1 2 3 5 8 13 21...
 {
