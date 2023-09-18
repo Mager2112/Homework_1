@@ -57,6 +57,25 @@ int Array_find(int array[], int n) // finding missing number 1, 2, 3, 5, 6 resul
 	}
 	return result+1;
 }
+//////5) 2d Array finding
+void Array_find_2d(int *array[], int rows, int colomns, int key) // finding number in 2d array
+{
+	int answer = 0;
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < colomns; j++)
+		{
+			if (array[i][j] == key)
+			{
+				std::cout << "Yes it is there\n";
+				answer+=1;
+				break;
+			}
+		}
+	}
+	if (answer == 0)
+		std::cout << "No, there is not\n";
+}
 int main()
 {/*  
 	//----------1--------
@@ -81,6 +100,33 @@ int main()
 	for (int i = 0; i < n; i++)
 		std::cin >> dinamich_array[i];
 	std::cout << "\n result: " << Array_find(dinamich_array, n);
+        //---------5----------
+	int rows = 3;
+	int cols = 3;
+	int** arr = new int* [rows];
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols];
+	}
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			std::cin >> arr[i][j];
+		}
+	}
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			std::cout << arr[i][j] << "\t";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "enter number\n";
+	int key;
+	std::cin >> key;
+	Array_find_2d(arr, rows, cols, key);
  */
 }
 
