@@ -1,3 +1,7 @@
+﻿/*
+   Copyright Mager 2023
+   All rights reserved lmao
+*/
 #include <cmath>
 #include <algorithm>
 ﻿#include <iostream>
