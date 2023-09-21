@@ -80,7 +80,6 @@ void Array_find_2d(int *array[], int rows, int colomns, int key) // finding numb
 	if (answer == 0)
 		std::cout << "No, there is not\n";
 }
-///////7) New Array from old
 ///////7) Array new
 void Array_new(int array[], int n) // answer[3] = array[1]*array[2] * xxx * array[4]
 {
