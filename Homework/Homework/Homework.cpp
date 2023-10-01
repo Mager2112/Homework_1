@@ -81,10 +81,132 @@ void Array_find_2d(int *array[], int rows, int colomns, int key) // finding numb
 		std::cout << "No, there is not\n";
 }
 ///////6) Sudoku check
-void Sudoku_prototype(int array[], int n)
+bool isinRange(int board[][N])
 {
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			if (board[i][j] <= 0 || board[i][j] > 9)
+				return false;
+		}
+	}
+	return true;
+}
+bool isValidSudoku(int board[][N])
+{
+	// Check if all elements of board[][]
+	// stores value in the range[1, 9]
+	if (isinRange(board)
+		== false) {
+		return false;
+	}
 
-	
+	// Stores unique value
+	// from 1 to N
+	bool unique[N + 1];
+
+	// Traverse each row of
+	// the given array
+	for (int i = 0; i < N; i++) {
+
+		// Initialize unique[]
+		// array to false
+		memset(unique, false,
+			sizeof(unique));
+
+		// Traverse each column
+		// of current row
+		for (int j = 0; j < N;
+			j++) {
+
+			// Stores the value
+			// of board[i][j]
+			int Z = board[i][j];
+
+			// Check if current row
+			// stores duplicate value
+			if (unique[Z]) {
+				return false;
+			}
+			unique[Z] = true;
+		}
+	}
+
+	// Traverse each column of
+	// the given array
+	for (int i = 0; i < N; i++) {
+
+		// Initialize unique[]
+		// array to false
+		memset(unique, false,
+			sizeof(unique));
+
+		// Traverse each row
+		// of current column
+		for (int j = 0; j < N;
+			j++) {
+
+			// Stores the value
+			// of board[j][i]
+			int Z = board[j][i];
+
+			// Check if current column
+			// stores duplicate value
+			if (unique[Z]) {
+				return false;
+			}
+			unique[Z] = true;
+		}
+	}
+
+	// Traverse each block of
+	// size 3 * 3 in board[][] array
+	for (int i = 0; i < N - 2;
+		i += 3) {
+
+		// j stores first column of
+		// each 3 * 3 block
+		for (int j = 0; j < N - 2;
+			j += 3) {
+
+			// Initialize unique[]
+			// array to false
+			memset(unique, false,
+				sizeof(unique));
+
+			// Traverse current block
+			for (int k = 0; k < 3;
+				k++) {
+
+				for (int l = 0; l < 3;
+					l++) {
+
+					// Stores row number
+					// of current block
+					int X = i + k;
+
+					// Stores column number
+					// of current block
+					int Y = j + l;
+
+					// Stores the value
+					// of board[X][Y]
+					int Z = board[X][Y];
+
+					// Check if current block
+					// stores duplicate value
+					if (unique[Z]) {
+						return false;
+					}
+					unique[Z] = true;
+				}
+			}
+		}
+	}
+
+	// If all conditions satisfied
+	return true;
 }
 ///////7) Array new
 void Array_new(int array[], int n) // answer[3] = array[1]*array[2] * xxx * array[4]
