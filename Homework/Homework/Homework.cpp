@@ -81,24 +81,9 @@ void Array_find_2d(int *array[], int rows, int colomns, int key) // finding numb
 		std::cout << "No, there is not\n";
 }
 ///////6) Sudoku check
-void Sudoku_prototype(int array[], int n) //!!! NOT WORKING !!!
+void Sudoku_prototype(int array[], int n)
 {
-	int result = 0;
-	std::sort(array, array + n);
-	for (int i = 0; i < n; i++)
-		std::cout << array[i] << std::endl;
-	for (int i = 0; i < n; i++)
-	{
-		std::cout << "\t" << array[i] << "\t" << array[i + 1]<<"\n";
-		if (array[i] != array[i + 1] - 1)
-		{
-			std::cout << "Not correct\n";
-			result++;
-			break;
-		}
-	}
-	if (result == 0)
-		std::cout << "Correct";
+
 	
 }
 ///////7) Array new
