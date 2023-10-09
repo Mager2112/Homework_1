@@ -1,2 +1,2 @@
 # Homework_1
-Homework with algorithms in Homework #1
+Homework with algorithms from Homework #1
